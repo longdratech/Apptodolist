@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ui.view.activity_login">
 
     <TextView
         android:layout_marginTop="20dp"
         android:textColor="@color/color_red"
-        android:textSize="30sp"
+        android:textSize="@dimen/size_title"
         android:gravity="center"
-        android:text="@string/label_title_dang_ky"
+        android:text="@string/label_title_dangnhap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <com.google.android.material.textfield.TextInputLayout
@@ -38,39 +38,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="30dp"
-        app:passwordToggleEnabled="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:inputType="textPassword"
-            android:id="@+id/textInutEdtRePassword"
-            android:hint="@string/label_re_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/buttonHuy"
+            android:id="@+id/buttonDangNhap"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@id/buttonDangky"
-            android:text="@string/label_cancel"
+            android:text="@string/label_button_dangnhap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <Button
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/buttonHuy"
+            app:layout_constraintLeft_toRightOf="@id/buttonDangNhap"
             android:id="@+id/buttonDangky"
-            android:text="@string/label_dang_ky"
+            android:text="@string/label_button_dangky"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

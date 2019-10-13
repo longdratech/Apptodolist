@@ -8,11 +8,10 @@ import retrofit2.http.POST;
 
 public interface ApiRequest {
 
-    // ctrl + alt + o
     @FormUrlEncoded
     @POST("login.php")
     Call<LoginResponse> onLoginResult(
-                                    @Field("username") String username,
+                                    @Field("user") String username,
                                     @Field("password") String password);
 
 }

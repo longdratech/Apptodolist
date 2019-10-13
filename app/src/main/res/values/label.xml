@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="label_title_dang_ky">Login Information</string>
+    <string name="label_title_dangnhap">Thông tin đăng nhập</string>
+    <string name="label__title_dangky">Đăng ký thông tin</string>
     <string name="label_hint_email_username">Email/Username</string>
     <string name="label_password">Password</string>
     <string name="label_re_password">Re-password</string>
-    <string name="label_cancel">Cancel</string>
-    <string name="label_dang_ky">Register</string>
+    <string name="label_button_dangnhap">Dang nhap</string>
+    <string name="label_button_dangky">Đăng ký</string>
 </resources>

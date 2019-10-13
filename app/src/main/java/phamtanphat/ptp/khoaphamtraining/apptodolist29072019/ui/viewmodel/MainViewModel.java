@@ -1,4 +1,4 @@
-package phamtanphat.ptp.khoaphamtraining.apptodolist29072019.viewmodel;
+package phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.viewmodel;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -13,6 +13,7 @@ public class MainViewModel extends ViewModel {
 
     public MutableLiveData<LoginResponse> onValidLogin(String username ,String password){
         return repository.checkLogin(username,password);
+
     }
 
 

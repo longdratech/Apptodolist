@@ -19,13 +19,14 @@ public class RetrofitInit {
 
     private static Retrofit retrofit = null;
 
-    private RetrofitInit(){
+    private RetrofitInit() {
 
     }
+
     // ngươi dùng gọi phương thức này sẽ khởi tạo 2 thằng trên và trả về
     // interface request
-    public static ApiRequest initApi(){
-        if (retrofit == null){
+    public static ApiRequest initApi() {
+        if (retrofit == null) {
             retrofit = getInstance();
         }
         return retrofit.create(ApiRequest.class);
@@ -40,19 +41,17 @@ public class RetrofitInit {
                 .create();
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                                .readTimeout(10, TimeUnit.SECONDS)
-                                .writeTimeout(10 , TimeUnit.SECONDS)
-                                .connectTimeout(10,TimeUnit.SECONDS)
-                                .retryOnConnectionFailure(true)
-                                .protocols(Arrays.asList(Protocol.HTTP_1_1))
-                                .build();
+                .readTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(true)
+                .protocols(Arrays.asList(Protocol.HTTP_1_1))
+                .build();
         retrofit = new Retrofit.Builder()
-                        .client(okHttpClient)
-                        .addConverterFactory(GsonConverterFactory.create(gson))
-                        .baseUrl("http://172.16.1.17:8080/apitodolist2907/")
-                        .build();
-
-
+                .client(okHttpClient)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .baseUrl("http://192.168.1.7/hihi/")
+                .build();
         return retrofit;
     }
 
