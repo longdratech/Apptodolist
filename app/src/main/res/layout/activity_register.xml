@@ -17,6 +17,7 @@
         tools:layout_editor_absoluteY="49dp" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEditText"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="1dp"
@@ -28,13 +29,13 @@
             android:hint="hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <com.google.android.material.textfield.TextgiInputLayout
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/layoutEditText"
         tools:layout_editor_absoluteX="1dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextgiInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="409dp"
