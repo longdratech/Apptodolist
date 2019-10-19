@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.LoginResponse;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.AuthResponse;
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.retrofit.ApiRequest;
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.retrofit.RetrofitInit;
 import retrofit2.Call;
@@ -29,17 +29,17 @@ public class LoginRepository {
     }
 
 
-    public MutableLiveData<LoginResponse> checkLogin(String username, String password) {
-        final MutableLiveData<LoginResponse> loginResponse = new MutableLiveData<>();
-        apiRequest.onLoginResult(username, password).enqueue(new Callback<LoginResponse>() {
+    public MutableLiveData<AuthResponse> checkLogin(String username, String password) {
+        final MutableLiveData<AuthResponse> loginResponse = new MutableLiveData<>();
+        apiRequest.onLoginResult(username, password).enqueue(new Callback<AuthResponse>() {
             @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
                 loginResponse.postValue(response.body());
                 Log.d("BBB", "Thành công");
             }
 
             @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
+            public void onFailure(Call<AuthResponse> call, Throwable t) {
                 Log.d("BBB", t.getMessage());
             }
         });

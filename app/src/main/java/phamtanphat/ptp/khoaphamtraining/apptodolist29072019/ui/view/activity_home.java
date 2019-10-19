@@ -18,12 +18,6 @@ public class activity_home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ten = findViewById(R.id.editText);
 
-        Intent intent = getIntent();
-        tenne = String.valueOf(intent.getIntExtra("ten",2));
-
-
-        ten.setText(tenne);
     }
 }

@@ -12,13 +12,13 @@ import androidx.lifecycle.Observer;
 import com.google.android.material.textfield.TextInputEditText;
 
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.R;
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.LoginResponse;
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.viewmodel.LoginViewModel;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.AuthResponse;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.viewmodel.AuthViewModel;
 
 
 public class activity_login extends AppCompatActivity {
 
-    LoginViewModel mMainViewModel;
+    AuthViewModel mMainViewModel;
 
     Button btnLogin, btnDangKy;
     String matKhau, ten;
@@ -32,7 +32,7 @@ public class activity_login extends AppCompatActivity {
         edtTenDangNhap = findViewById(R.id.edtUsername);
         edtMatKhau = findViewById(R.id.edtPass);
 
-        mMainViewModel = new LoginViewModel();
+        mMainViewModel = new AuthViewModel();
 
         btnLogin = findViewById(R.id.buttonDangNhap);
         btnDangKy = findViewById(R.id.buttonDangky);
@@ -46,10 +46,10 @@ public class activity_login extends AppCompatActivity {
 
                 //Toast.makeText(activity_login.this, "ten: " + ten + "Pass: " + matKhau, Toast.LENGTH_SHORT).show();
                 mMainViewModel
-                        .onValidLogin(ten, matKhau)
-                        .observe(activity_login.this, new Observer<LoginResponse>() {
+                        .onValidAuth(ten, matKhau,null)
+                        .observe(activity_login.this, new Observer<AuthResponse>() {
                             @Override
-                            public void onChanged(LoginResponse loginResponse) {
+                            public void onChanged(AuthResponse loginResponse) {
                                 int id = Integer.parseInt(loginResponse.getIduser());
                                 if (loginResponse.getSuccess() == true) {
                                     Intent intent = new Intent(activity_login.this, activity_home.class);

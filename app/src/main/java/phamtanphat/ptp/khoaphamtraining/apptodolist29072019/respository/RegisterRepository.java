@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.RegisterResponse;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.AuthResponse;
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.retrofit.ApiRequest;
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.retrofit.RetrofitInit;
 import retrofit2.Call;
@@ -12,6 +12,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterRepository {
+
     private static RegisterRepository repository = null;
     private ApiRequest apiRequest;
 
@@ -27,19 +28,19 @@ public class RegisterRepository {
         return repository;
     }
 
-    public MutableLiveData<RegisterResponse> checkRegister(String username, String password) {
-        final MutableLiveData<RegisterResponse> registerResponse = new MutableLiveData<>();
-        apiRequest.onRegisterResult(username, password).enqueue(new Callback<RegisterResponse>() {
+
+    public MutableLiveData<AuthResponse> checkRegister(String username, String password) {
+        final MutableLiveData<AuthResponse> registerResponse = new MutableLiveData<>();
+        apiRequest.onRegisterResult(username, password).enqueue(new Callback<AuthResponse>() {
             @Override
-            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
                 registerResponse.postValue(response.body());
-                Log.d("BBB",response.message());
+                Log.d("BBB", "Thành công");
             }
 
             @Override
-            public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                Log.d("BBB",t.getMessage());
-
+            public void onFailure(Call<AuthResponse> call, Throwable t) {
+                Log.d("BBB", t.getMessage());
             }
         });
         return registerResponse;

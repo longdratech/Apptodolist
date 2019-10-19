@@ -12,14 +12,14 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.R;
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.RegisterResponse;
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.viewmodel.RegisterViewModel;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.AuthResponse;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.viewmodel.AuthViewModel;
 
 public class acitivity_register extends AppCompatActivity {
     TextInputEditText edtTenDangNhap, edtMatKhau,edtReMatKhau;
     Button btnDangKy;
     String ten, remk, mk;
-    RegisterViewModel registerViewModel;
+    AuthViewModel registerViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class acitivity_register extends AppCompatActivity {
 
         btnDangKy = findViewById(R.id.btnDangKy);
 
-        registerViewModel = new RegisterViewModel();
+        registerViewModel = new AuthViewModel();
 
         btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,14 +39,15 @@ public class acitivity_register extends AppCompatActivity {
                 ten = edtTenDangNhap.getText().toString().trim();
                 mk = edtMatKhau.getText().toString().trim();
                 remk = edtReMatKhau.getText().toString().trim();
+
                 if(!remk.equals(mk)){
                     Toast.makeText(acitivity_register.this, "Mật khẩu không khớp", Toast.LENGTH_SHORT).show();
                 }else{
                     registerViewModel
-                            .onValidRgister(ten,mk)
-                            .observe(acitivity_register.this, new Observer<RegisterResponse>() {
+                            .onValidAuth(ten,mk,remk)
+                            .observe(acitivity_register.this, new Observer<AuthResponse>() {
                                 @Override
-                                public void onChanged(RegisterResponse registerResponse) {
+                                public void onChanged(AuthResponse registerResponse) {
                                     if(registerResponse.getSuccess()==true){
                                         Log.d("BBB",registerResponse.getMessage());
                                         Toast.makeText(acitivity_register.this, registerResponse.getMessage(), Toast.LENGTH_SHORT).show();

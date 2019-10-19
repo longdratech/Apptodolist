@@ -3,8 +3,11 @@ package phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse {
+public class AuthResponse {
 
+    @SerializedName("message")
+    @Expose
+    private String message;
     @SerializedName("success")
     @Expose
     private Boolean success;
@@ -26,6 +29,14 @@ public class LoginResponse {
 
     public void setIduser(String iduser) {
         this.iduser = iduser;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
 }
