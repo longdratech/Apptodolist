@@ -11,17 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.view.acitivity_register">
-
-        </activity>
-        <activity android:name=".ui.view.activity_home" />
-        <activity android:name=".ui.view.activity_login">
+        <activity android:name=".ui.view.activity_calendar"></activity>
+        <activity android:name=".ui.view.activity_addwork" />
+        <activity android:name=".ui.view.acitivity_register" />
+        <activity android:name=".ui.view.activity_home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.view.activity_login" />
     </application>
 
 </manifest>

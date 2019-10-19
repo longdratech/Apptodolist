@@ -8,4 +8,7 @@
     <string name="label_hint_re_password">Nhập lại mật khẩu</string>
     <string name="label_button_dangnhap">Dang nhap</string>
     <string name="label_button_dangky">Đăng ký</string>
+    <string name="label_hint_tencongviec">Nhập tên công việc</string>
+    <string name="label_title_tencongviec">Nhập tên công việc</string>
+    <string name="label_title_thoigian">Chọn thời gian</string>
 </resources>
