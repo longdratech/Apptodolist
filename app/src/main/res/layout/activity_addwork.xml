@@ -28,10 +28,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="@dimen/size_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
+
             android:id="@+id/edtThoiGian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

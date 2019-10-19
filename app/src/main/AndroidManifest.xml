@@ -15,13 +15,14 @@
         <activity android:name=".ui.view.activity_addwork" />
         <activity android:name=".ui.view.acitivity_register" />
         <activity android:name=".ui.view.activity_home">
+        </activity>
+        <activity android:name=".ui.view.activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.view.activity_login" />
     </application>
 
 </manifest>
