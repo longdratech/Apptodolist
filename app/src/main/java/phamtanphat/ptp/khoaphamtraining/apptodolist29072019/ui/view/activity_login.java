@@ -13,12 +13,12 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.R;
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.LoginResponse;
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.viewmodel.MainViewModel;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.viewmodel.LoginViewModel;
 
 
 public class activity_login extends AppCompatActivity {
 
-    MainViewModel mMainViewModel;
+    LoginViewModel mMainViewModel;
 
     Button btnLogin, btnDangKy;
     String matKhau, ten;
@@ -29,10 +29,10 @@ public class activity_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        edtTenDangNhap = findViewById(R.id.textInutEdtUserName);
-        edtMatKhau = findViewById(R.id.textInutEdtPassword);
+        edtTenDangNhap = findViewById(R.id.edtUsername);
+        edtMatKhau = findViewById(R.id.edtPass);
 
-        mMainViewModel = new MainViewModel();
+        mMainViewModel = new LoginViewModel();
 
         btnLogin = findViewById(R.id.buttonDangNhap);
         btnDangKy = findViewById(R.id.buttonDangky);
@@ -65,7 +65,7 @@ public class activity_login extends AppCompatActivity {
         btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_login.this,activity_register.class);
+                Intent intent = new Intent(activity_login.this,acitivity_register.class);
                 startActivity(intent);
             }
         });
