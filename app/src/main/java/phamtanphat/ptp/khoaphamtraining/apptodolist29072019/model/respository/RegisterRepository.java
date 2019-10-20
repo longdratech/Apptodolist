@@ -1,10 +1,10 @@
-package phamtanphat.ptp.khoaphamtraining.apptodolist29072019.respository;
+package phamtanphat.ptp.khoaphamtraining.apptodolist29072019.model.respository;
 
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.AuthResponse;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.model.response.getResponse;
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.retrofit.ApiRequest;
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.retrofit.RetrofitInit;
 import retrofit2.Call;
@@ -29,17 +29,17 @@ public class RegisterRepository {
     }
 
 
-    public MutableLiveData<AuthResponse> checkRegister(String username, String password) {
-        final MutableLiveData<AuthResponse> registerResponse = new MutableLiveData<>();
-        apiRequest.onRegisterResult(username, password).enqueue(new Callback<AuthResponse>() {
+    public MutableLiveData<getResponse> checkRegister(String username, String password) {
+        final MutableLiveData<getResponse> registerResponse = new MutableLiveData<>();
+        apiRequest.onRegisterResult(username, password).enqueue(new Callback<getResponse>() {
             @Override
-            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+            public void onResponse(Call<getResponse> call, Response<getResponse> response) {
                 registerResponse.postValue(response.body());
                 Log.d("BBB", "Thành công");
             }
 
             @Override
-            public void onFailure(Call<AuthResponse> call, Throwable t) {
+            public void onFailure(Call<getResponse> call, Throwable t) {
                 Log.d("BBB", t.getMessage());
             }
         });

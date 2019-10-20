@@ -50,7 +50,7 @@ public class RetrofitInit {
         retrofit = new Retrofit.Builder()
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .baseUrl("http://192.168.1.10/hihi/")
+                .baseUrl("http://192.168.0.29/hihi/")
                 .build();
         return retrofit;
     }

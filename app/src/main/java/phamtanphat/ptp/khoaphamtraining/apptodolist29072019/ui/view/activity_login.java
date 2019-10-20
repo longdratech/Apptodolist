@@ -2,6 +2,7 @@ package phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -12,7 +13,7 @@ import androidx.lifecycle.Observer;
 import com.google.android.material.textfield.TextInputEditText;
 
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.R;
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.AuthResponse;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.model.response.getResponse;
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.viewmodel.AuthViewModel;
 
 
@@ -46,14 +47,15 @@ public class activity_login extends AppCompatActivity {
 
                 //Toast.makeText(activity_login.this, "ten: " + ten + "Pass: " + matKhau, Toast.LENGTH_SHORT).show();
                 mMainViewModel
-                        .onValidAuth(ten, matKhau,null)
-                        .observe(activity_login.this, new Observer<AuthResponse>() {
+                        .onValidAuth(ten, matKhau, null)
+                        .observe(activity_login.this, new Observer<getResponse>() {
                             @Override
-                            public void onChanged(AuthResponse loginResponse) {
-                                int id = Integer.parseInt(loginResponse.getIduser());
-                                if (loginResponse.getSuccess() == true) {
+                            public void onChanged(getResponse loginResponse) {
+                                int id = loginResponse.getIduser();
+                                Log.d("BBB", "login id: " + id);
+                                if (loginResponse.getSuccess()) {
                                     Intent intent = new Intent(activity_login.this, activity_home.class);
-                                    intent.putExtra("ten", id);
+                                    intent.putExtra("iduser", id);
                                     startActivity(intent);
                                 } else {
                                     Toast.makeText(activity_login.this, "Tên đăng nhập hoặc mật khẩu không hợp lệ", Toast.LENGTH_SHORT).show();
@@ -65,7 +67,7 @@ public class activity_login extends AppCompatActivity {
         btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_login.this,acitivity_register.class);
+                Intent intent = new Intent(activity_login.this, acitivity_register.class);
                 startActivity(intent);
             }
         });

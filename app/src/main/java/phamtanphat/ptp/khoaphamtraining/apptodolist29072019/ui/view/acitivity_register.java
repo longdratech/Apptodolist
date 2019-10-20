@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.R;
-import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response.AuthResponse;
+import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.model.response.getResponse;
 import phamtanphat.ptp.khoaphamtraining.apptodolist29072019.ui.viewmodel.AuthViewModel;
 
 public class acitivity_register extends AppCompatActivity {
@@ -45,10 +45,10 @@ public class acitivity_register extends AppCompatActivity {
                 }else{
                     registerViewModel
                             .onValidAuth(ten,mk,remk)
-                            .observe(acitivity_register.this, new Observer<AuthResponse>() {
+                            .observe(acitivity_register.this, new Observer<getResponse>() {
                                 @Override
-                                public void onChanged(AuthResponse registerResponse) {
-                                    if(registerResponse.getSuccess()==true){
+                                public void onChanged(getResponse registerResponse) {
+                                    if(registerResponse.getSuccess()){
                                         Log.d("BBB",registerResponse.getMessage());
                                         Toast.makeText(acitivity_register.this, registerResponse.getMessage(), Toast.LENGTH_SHORT).show();
                                     }else {

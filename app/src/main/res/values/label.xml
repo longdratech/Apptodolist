@@ -11,4 +11,5 @@
     <string name="label_hint_tencongviec">Nhập tên công việc</string>
     <string name="label_title_tencongviec">Nhập tên công việc</string>
     <string name="label_title_thoigian">Chọn thời gian</string>
+    <string name="label_button_luu">Lưu</string>
 </resources>

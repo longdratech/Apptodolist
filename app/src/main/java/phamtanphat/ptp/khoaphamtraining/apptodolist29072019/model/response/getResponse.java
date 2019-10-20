@@ -1,9 +1,9 @@
-package phamtanphat.ptp.khoaphamtraining.apptodolist29072019.api.response;
+package phamtanphat.ptp.khoaphamtraining.apptodolist29072019.model.response;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class AuthResponse {
+public class getResponse {
 
     @SerializedName("message")
     @Expose
@@ -13,7 +13,7 @@ public class AuthResponse {
     private Boolean success;
     @SerializedName("iduser")
     @Expose
-    private String iduser;
+    private int iduser;
 
     public Boolean getSuccess() {
         return success;
@@ -23,11 +23,11 @@ public class AuthResponse {
         this.success = success;
     }
 
-    public String getIduser() {
+    public int getIduser() {
         return iduser;
     }
 
-    public void setIduser(String iduser) {
+    public void setIduser(int iduser) {
         this.iduser = iduser;
     }
 

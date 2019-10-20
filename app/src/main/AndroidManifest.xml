@@ -11,11 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.view.activity_calendar"></activity>
+        <activity android:name=".ui.view.activity_calendar" />
         <activity android:name=".ui.view.activity_addwork" />
         <activity android:name=".ui.view.acitivity_register" />
-        <activity android:name=".ui.view.activity_home">
-        </activity>
+        <activity android:name=".ui.view.activity_home"></activity>
         <activity android:name=".ui.view.activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
